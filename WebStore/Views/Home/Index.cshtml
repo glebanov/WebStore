@@ -1,13 +1,22 @@
-﻿<!DOCTYPE html>
+﻿<partial name="Partial/_Slider"/>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>First view from first controller!</p>
-    <a href="~/Home/Employees">Сотрудники!!!</a>
-   
-</body>
-</html>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <partial name="Partial/_LeftSideBar" />
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                <partial name="Partial/_FeaturesItems" />
+                <!--features_items-->
+                <partial name="Partial/_CategoryTab" />
+                <!--/category-tab-->
+                <partial name="Partial/_RecommendedItems" />
+                                       
+                <!--/recommended_items-->
+
+            </div>
+        </div>
+    </div>
+</section>
