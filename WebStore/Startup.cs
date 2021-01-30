@@ -20,6 +20,10 @@ namespace WebStore
         {
             services.AddTransient<IEmployeesData, InMemoryEmployeesData>();
 
+            //services.AddTransient<>();
+            //services.AddScoped<>();
+            //services.AddSingleton<>();
+
             //services.AddMvc(opt => opt.Conventions.Add(new TestControllerModelConvention()));
             services
                .AddControllersWithViews(/*opt => opt.Conventions.Add(new TestControllerModelConvention())*/)
