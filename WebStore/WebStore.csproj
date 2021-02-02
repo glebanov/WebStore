@@ -5,9 +5,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Views\Catalog\Index.cshtml" />
+    <None Include="Views\Catalog\Partial\_Advertisement.cshtml" />
+    <None Include="Views\Employees\Delete.cshtml" />
     <None Include="Views\Employees\Details.cshtml" />
+    <None Include="Views\Employees\Edit.cshtml" />
     <None Include="Views\Employees\Index.cshtml" />
     <None Include="Views\Employees\_LayoutEmployees.cshtml" />
+    <None Include="Views\Home\Employees.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Partial\_CategoryTab.cshtml" />
+    <None Include="Views\Home\Partial\_RecommendedItems.cshtml" />
+    <None Include="Views\Home\Partial\_Slider.cshtml" />
+    <None Include="Views\Shared\Components\Brands\Default.cshtml" />
+    <None Include="Views\Shared\Components\Sections\Default.cshtml" />
+    <None Include="Views\Shared\Partial\_FeaturesItems.cshtml" />
+    <None Include="Views\Shared\Partial\_Footer.cshtml" />
+    <None Include="Views\Shared\Partial\_Header.cshtml" />
+    <None Include="Views\Shared\Partial\_LeftSideBar.cshtml" />
+    <None Include="Views\Shared\Partial\_MainMenu.cshtml" />
+    <None Include="Views\Shared\Partial\_Scripts.cshtml" />
+    <None Include="Views\Shared\Partial\_Styles.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,3 +44,4 @@
   </ItemGroup>
 
 </Project>
+

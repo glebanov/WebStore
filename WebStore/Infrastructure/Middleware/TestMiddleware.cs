@@ -11,10 +11,17 @@ namespace WebStore.Infrastructure.Middleware
 
         public async Task InvokeAsync(HttpContext context)
         {
+            // Действие до следующего узла в конвейере
+
+            //context.Response.
 
             var next = _Next(context);
 
-            await next;
+            // Действие во время того, как оставшаяся часть конвейера что-то там делает с контекстом
+
+            await next; // Точка синхронизации
+
+            // Действие по завершении работы оставшейся части конвейера
         }
     }
 }
