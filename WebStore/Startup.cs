@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using WebStore.Infrastructure.Interfaces;
 using WebStore.Infrastructure.Middleware;
 using WebStore.Infrastructure.Services;
+using WebStore.DAL.Context;
 
 namespace WebStore
 {
@@ -14,6 +15,9 @@ namespace WebStore
     {
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<WebStoreDB>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
+            
             services.AddTransient<IEmployeesData, InMemoryEmployeesData>();
             services.AddTransient<IProductData, InMemoryProductData>();
 
