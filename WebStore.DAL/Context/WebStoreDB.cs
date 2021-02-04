@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WebStore.Domain.Entities;
 
 namespace WebStore.DAL.Context
@@ -16,10 +11,7 @@ namespace WebStore.DAL.Context
 
         public DbSet<Section> Sections { get; set; }
 
-        public WebStoreDB(DbContextOptions<WebStoreDB>options): base(options)
-        { 
-        
-        }
+        public WebStoreDB(DbContextOptions<WebStoreDB>options): base(options) { }
 
 
     }
