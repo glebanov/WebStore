@@ -8,6 +8,8 @@ using WebStore.Infrastructure.Interfaces;
 using WebStore.Infrastructure.Middleware;
 using WebStore.Infrastructure.Services;
 using WebStore.DAL.Context;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace WebStore
 {
@@ -17,7 +19,7 @@ namespace WebStore
         {
 
             services.AddDbContext<WebStoreDB>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
-            
+
             services.AddTransient<IEmployeesData, InMemoryEmployeesData>();
             services.AddTransient<IProductData, InMemoryProductData>();
 
