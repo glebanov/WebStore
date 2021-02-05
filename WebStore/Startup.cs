@@ -17,7 +17,7 @@ namespace WebStore
     {
         public void ConfigureServices(IServiceCollection services)
         {
-
+            //services.AddDbContext<WebStoreDB>(opt => opt.UseSqLite(Configuration.GetConnectionString("Sqlite")));//Подключение другого сервера
             services.AddDbContext<WebStoreDB>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
 
             services.AddTransient<IEmployeesData, InMemoryEmployeesData>();
