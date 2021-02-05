@@ -20,14 +20,15 @@ namespace WebStore.Components
             var sections = _ProductData.GetSections();
 
             var parent_sections = sections.Where(s => s.ParentId is null);
-            
+
             var parent_sections_views = parent_sections
                .Select(s => new SectionViewModel
-                {
-                    Id = s.Id,
-                    Name = s.Name,
-                    Order = s.Order
-                })
+               {
+                   Id = s.Id,
+                   Name = s.Name,
+                   Order = s.Order,
+                   ProductsCount = s.Products.Count(),
+               })
                .ToList();
 
             int OrderSortMethod(SectionViewModel a, SectionViewModel b) => Comparer<int>.Default.Compare(a.Order, b.Order);
@@ -41,7 +42,8 @@ namespace WebStore.Components
                         Id = child_section.Id,
                         Name = child_section.Name,
                         Order = child_section.Order,
-                        Parent = parent_section
+                        Parent = parent_section,
+                        ProductsCount = child_section.Products.Count(),
                     });
 
                 parent_section.ChildSections.Sort(OrderSortMethod);
