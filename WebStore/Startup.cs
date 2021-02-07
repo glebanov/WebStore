@@ -46,7 +46,7 @@ namespace WebStore
 #endif
 
                 opt.User.RequireUniqueEmail = false;
-                opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
 
                 //Политика блокировки учетных записей
                 opt.Lockout.AllowedForNewUsers = false;
