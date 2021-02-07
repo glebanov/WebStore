@@ -38,7 +38,7 @@ namespace WebStore
             {
 #if DEBUG     //Условная компиляция в режиме DEBUG
                 opt.Password.RequiredLength = 3; //Количество символов
-                opt.Password.RequireDigit = false; //
+                opt.Password.RequireDigit = false; 
                 opt.Password.RequireLowercase = false;
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireNonAlphanumeric = false;
@@ -58,7 +58,7 @@ namespace WebStore
            {
                opt.Cookie.Name = "WebStore.GB";
                opt.Cookie.HttpOnly = true;
-               opt.Cookie.Expiration = TimeSpan.FromDays(10);
+               opt.ExpireTimeSpan = TimeSpan.FromDays(10);
 
                opt.LoginPath = "/Account/Login";
                opt.LoginPath = "/Account/Logout";
