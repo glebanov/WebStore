@@ -6,7 +6,7 @@ namespace WebStore.Domain.Identity
     {
         public const string Administrator = "Admin";
 
-        public const string DefaultAdminPassword = "AdPAss";
+        public const string DefaultAdminPassword = "Ghjuhfvvbcn12345"; // Программист12345
         public string Description { get; set; }
     }
 }
