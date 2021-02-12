@@ -15,7 +15,6 @@
     <None Include="Views\Home\Employees.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Partial\_CategoryTab.cshtml" />
-    <None Include="Views\Home\Partial\_RecommendedItems.cshtml" />
     <None Include="Views\Home\Partial\_Slider.cshtml" />
     <None Include="Views\Shared\Components\Brands\Default.cshtml" />
     <None Include="Views\Shared\Components\Sections\Default.cshtml" />
@@ -32,6 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="9.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.2" />
