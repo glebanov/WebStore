@@ -16,6 +16,7 @@ using WebStore.Data;
 using WebStore.Domain.Identity;
 using WebStore.Infrastructure.Interfaces;
 using WebStore.Infrastructure.Middleware;
+using WebStore.Infrastructure.Services.InCookies;
 using WebStore.Infrastructure.Services.InMemory;
 using WebStore.Infrastructure.Services.InSQL;
 
@@ -71,6 +72,7 @@ namespace WebStore
             services.AddTransient<IEmployeesData, InMemoryEmployeesData>();
             //services.AddTransient<IProductData, InMemoryProductData>();
             services.AddTransient<IProductData, SqlProductData>();
+            services.AddTransient<ICartService, InCookiesCartService>();
 
             services
                .AddControllersWithViews()

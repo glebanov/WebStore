@@ -14,7 +14,7 @@ namespace WebStore.Infrastructure.Interfaces
 
         void Remove(int id); //Удаление товара
 
-        void Clear();
+        void Clear();//Очистка
 
         CartViewModel GetViewModel();
     }
