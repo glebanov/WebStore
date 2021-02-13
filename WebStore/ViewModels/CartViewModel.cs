@@ -7,7 +7,7 @@ namespace WebStore.ViewModels
     {
         public IEnumerable<(ProductViewModel Product, int Quantity)> Items { get; set; }
 
-        public int ItemsCoun => Items?.Sum(item => item.Quantity) ?? 0;
+        public int ItemsCount => Items?.Sum(item => item.Quantity) ?? 0;
 
         public decimal TotalPrice => Items?.Sum(item => item.Product.Price * item.Quantity) ?? 0m;
     }

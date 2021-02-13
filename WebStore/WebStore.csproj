@@ -2,33 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>9b2f3446-95bf-4076-b49e-0a7536884cf1</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="Views\Catalog\Index.cshtml" />
-    <None Include="Views\Catalog\Partial\_Advertisement.cshtml" />
-    <None Include="Views\Employees\Delete.cshtml" />
-    <None Include="Views\Employees\Details.cshtml" />
-    <None Include="Views\Employees\Edit.cshtml" />
-    <None Include="Views\Employees\Index.cshtml" />
-    <None Include="Views\Employees\_LayoutEmployees.cshtml" />
-    <None Include="Views\Home\Employees.cshtml" />
-    <None Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Home\Partial\_CategoryTab.cshtml" />
-    <None Include="Views\Home\Partial\_Slider.cshtml" />
-    <None Include="Views\Shared\Components\Brands\Default.cshtml" />
-    <None Include="Views\Shared\Components\Sections\Default.cshtml" />
-    <None Include="Views\Shared\Partial\_FeaturesItems.cshtml" />
-    <None Include="Views\Shared\Partial\_Footer.cshtml" />
-    <None Include="Views\Shared\Partial\_Header.cshtml" />
-    <None Include="Views\Shared\Partial\_LeftSideBar.cshtml" />
-    <None Include="Views\Shared\Partial\_MainMenu.cshtml" />
-    <None Include="Views\Shared\Partial\_Scripts.cshtml" />
-    <None Include="Views\Shared\Partial\_Styles.cshtml" />
-    <None Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Views\_ViewImports.cshtml" />
-    <None Include="Views\_ViewStart.cshtml" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
@@ -41,10 +16,17 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" />
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.113" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
