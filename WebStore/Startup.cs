@@ -39,7 +39,7 @@ namespace WebStore
             {
 #if DEBUG     //Условная компиляция в режиме DEBUG
                 opt.Password.RequiredLength = 3; //Количество символов
-                opt.Password.RequireDigit = false; 
+                opt.Password.RequireDigit = false;
                 opt.Password.RequireLowercase = false;
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireNonAlphanumeric = false;
@@ -109,6 +109,10 @@ namespace WebStore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                name: "areas",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                                            );
+                     endpoints.MapControllerRoute(
                     "default",
                     "{controller=Home}/{action=Index}/{id?}");
             });
