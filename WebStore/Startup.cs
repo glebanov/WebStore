@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -6,10 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
-
-using System;
-
 
 using WebStore.DAL.Context;
 using WebStore.Data;
@@ -26,6 +24,7 @@ namespace WebStore
     {
         public void ConfigureServices(IServiceCollection services)
         {
+
             //services.AddDbContext<WebStoreDB>(opt => opt.UseSqLite(Configuration.GetConnectionString("Sqlite")));//Подключение другого сервера
             services.AddDbContext<WebStoreDB>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddTransient<WebStoreDbInitializer>();
