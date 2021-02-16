@@ -26,7 +26,10 @@ namespace WebStore
         {
 
             //services.AddDbContext<WebStoreDB>(opt => opt.UseSqLite(Configuration.GetConnectionString("Sqlite")));//Подключение другого сервера
-            services.AddDbContext<WebStoreDB>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<WebStoreDB>(opt => 
+            opt.UseSqlServer(Configuration.GetConnectionString("Default"))
+            .UseLazyLoadingProxies()
+            );
             services.AddTransient<WebStoreDbInitializer>();
 
             services.AddIdentity<User, Role>() // (opt => { })Лябда вырожение с конфигурацией
