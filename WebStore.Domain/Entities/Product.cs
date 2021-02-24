@@ -12,13 +12,13 @@ namespace WebStore.Domain.Entities
 
         //Создаем навигационное свойство
         [ForeignKey(nameof(SectionId))] // внешний ключ 
-        public Section Section { get; set; }
+        public virtual Section Section { get; set; }
 
         public int? BrandId { get; set; }
 
         //Создаем навигационное свойство
        [ForeignKey(nameof(BrandId))]// внешний ключ
-        public Brand Brand { get; set; }
+        public virtual Brand Brand { get; set; }
 
         public string ImageUrl { get; set; }
 

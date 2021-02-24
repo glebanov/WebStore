@@ -17,17 +17,19 @@ namespace WebStore.Infrastructure.Services.InSQL
 
         public IEnumerable<Section> GetSections() => _db.Sections.Include(s => s.Products);
 
-        public IEnumerable<Brand> GetBrands() =>_db.Brands.Include(b => b.Products);
-     
+        public IEnumerable<Brand> GetBrands() => _db.Brands.Include(b => b.Products);
+
 
         public IEnumerable<Product> GetProducts(ProductFilter Filter = null)
         {
-            IQueryable <Product> query = _db.Products;
+            IQueryable<Product> query = _db.Products
+            .Include(p => p.Brand)
+            .Include(p => p.Section);
 
             if (Filter?.Ids?.Length > 0)
-            
+
                 query = query.Where(product => Filter.Ids.Contains(product.Id));
-            
+
             else
             {
                 if (Filter?.SectionId is { } section_id)
@@ -43,6 +45,6 @@ namespace WebStore.Infrastructure.Services.InSQL
             .Include(product => product.Brand)
             .Include(product => product.Section)
             .FirstOrDefault(product => product.Id == id);
-    
+
     }
 }

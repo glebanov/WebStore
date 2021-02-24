@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -6,10 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
-
-using System;
-
 
 using WebStore.DAL.Context;
 using WebStore.Data;
@@ -26,8 +24,12 @@ namespace WebStore
     {
         public void ConfigureServices(IServiceCollection services)
         {
+
             //services.AddDbContext<WebStoreDB>(opt => opt.UseSqLite(Configuration.GetConnectionString("Sqlite")));//Подключение другого сервера
-            services.AddDbContext<WebStoreDB>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddDbContext<WebStoreDB>(opt => 
+            opt.UseSqlServer(Configuration.GetConnectionString("Default"))
+            .UseLazyLoadingProxies()
+            );
             services.AddTransient<WebStoreDbInitializer>();
 
             services.AddIdentity<User, Role>() // (opt => { })Лябда вырожение с конфигурацией
@@ -39,7 +41,7 @@ namespace WebStore
             {
 #if DEBUG     //Условная компиляция в режиме DEBUG
                 opt.Password.RequiredLength = 3; //Количество символов
-                opt.Password.RequireDigit = false; 
+                opt.Password.RequireDigit = false;
                 opt.Password.RequireLowercase = false;
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireNonAlphanumeric = false;
@@ -73,6 +75,7 @@ namespace WebStore
             //services.AddTransient<IProductData, InMemoryProductData>();
             services.AddTransient<IProductData, SqlProductData>();
             services.AddTransient<ICartService, InCookiesCartService>();
+            services.AddTransient<IOrderService, SqlOrderService>();
 
             services
                .AddControllersWithViews()
@@ -109,6 +112,10 @@ namespace WebStore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                name: "areas",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                                            );
+                     endpoints.MapControllerRoute(
                     "default",
                     "{controller=Home}/{action=Index}/{id?}");
             });
